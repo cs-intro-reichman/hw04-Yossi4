@@ -1,7 +1,7 @@
 public class ArrayOps {
     public static void main(String[] args) {
-        int[] array1 = {3,56,89,88};
-        System.out.println( isSorted(array1));
+        int[] array1 = {0,1,2,3,4,6};
+        System.out.println( findMissingInt(array1));
 
 
 
@@ -24,8 +24,6 @@ public class ArrayOps {
         for (int i = 0;i < array.length  ;i++ ) {//0<x<n
             sum += array[i];
         }
-        System.out.println(sum);
-        System.out.println(sumTilln(array.length+1));
 
         missingInteger = sumTilln(array.length+1) - sum;
         return missingInteger;
