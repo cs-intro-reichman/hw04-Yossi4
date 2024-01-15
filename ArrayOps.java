@@ -1,7 +1,7 @@
 public class ArrayOps {
     public static void main(String[] args) {
-        int[] array1 = {0,1,2,3,4,6};
-        System.out.println( findMissingInt(array1));
+        int[] array1 = {-202, 48, 13 , 7, 8};
+        System.out.println( secondMaxValue(array1));
 
 
 
@@ -41,6 +41,12 @@ public class ArrayOps {
 
     public static int secondMaxValue(int [] array) {//done
         int firstMax = MaxValueOfArray(array);
+        if (numberOfAppearances(array, firstMax) > 1) {
+            return firstMax;
+        }
+        else{
+
+
         int secondMax = 0;
         for (int i = 0; i < array.length ; i++ ) {
             if (array[i] != firstMax) {
@@ -55,6 +61,7 @@ public class ArrayOps {
         }
         return secondMax;
     }
+    }
     public static boolean elementInArray(int [] array, int x) {//checks if a given x is in a given array
         boolean flag = false;
         for (int i = 0; i < array.length && !flag ;i++ ) {
@@ -65,6 +72,15 @@ public class ArrayOps {
             
         }
         return flag;
+    }
+    public static int numberOfAppearances (int [] array, int x){
+        int counter = 0;
+        for (int i = 0 ;i < array.length ;i++ ) {
+            if (array[i] == x) {
+                counter++;
+            }
+        }
+        return counter;
     }
 
 
